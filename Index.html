@@ -1,263 +1,1123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetOutOfMyCountryNow.com | Official Merch</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        
-        body { font-family: 'Inter', sans-serif; }
-        
-        .product-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Out Of My Country Now | Official Store</title>
+  <meta name="description" content="Official merchandise store for Get Out Of My Country Now. Shop bumper stickers, tees, hats, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #12161b;
+      --panel-2: #171c23;
+      --text: #f3f5f7;
+      --muted: #a5b0bc;
+      --line: rgba(255,255,255,0.08);
+      --yellow: #ffd400;
+      --yellow-dark: #c9a700;
+      --red: #d62828;
+      --green: #16a34a;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 20px;
+      --max: 1240px;
+    }
 
-        .hero-bg {
-            /* Using a high-quality American flag background with a dark overlay for text contrast */
-            background: linear-gradient(rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.75)), 
-                        url('https://images.unsplash.com/photo-1508609349937-5ee4cb3e0ed0?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center 30%;
-            background-attachment: fixed; /* Parallax effect for desktop */
-        }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(214,40,40,0.16), transparent 28%),
+        linear-gradient(180deg, #0a0c0f 0%, #0d1116 100%);
+      color: var(--text);
+    }
 
-        .toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: #111827;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px;
-            padding: 16px;
-            position: fixed;
-            z-index: 100;
-            left: 50%;
-            bottom: 30px;
-            transform: translateX(-50%);
-            transition: opacity 0.3s, visibility 0.3s;
-            opacity: 0;
-        }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-        .toast.show {
-            visibility: visible;
-            opacity: 1;
-        }
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
 
-        /* Responsive adjustments for background-attachment */
-        @media (max-width: 768px) {
-            .hero-bg {
-                background-attachment: scroll;
-            }
-        }
-    </style>
+    .topbar {
+      background: var(--yellow);
+      color: #111;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px 14px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(11,13,16,0.8);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--yellow);
+      color: #111;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.83rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #111;
+      box-shadow: 0 14px 30px rgba(255,212,0,0.18);
+    }
+
+    .btn-primary:hover { background: #ffe14a; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .hero {
+      padding: 64px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+      min-height: 580px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -120px auto;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(255,212,0,0.18), transparent 70%);
+      z-index: -1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,212,0,0.08);
+      border: 1px solid rgba(255,212,0,0.18);
+      color: #ffe57d;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      width: fit-content;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      text-transform: uppercase;
+      max-width: 9ch;
+    }
+
+    .hero h1 span { color: var(--yellow); }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .showcase {
+      padding: 24px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .sticker-mock {
+      background: linear-gradient(180deg, #ffe866, var(--yellow));
+      border-radius: 22px;
+      min-height: 260px;
+      padding: 22px;
+      color: #111;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 18px 40px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sticker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      background: rgba(0,0,0,0.08);
+    }
+
+    .sticker-copy {
+      font-size: clamp(1.8rem, 4.2vw, 3.15rem);
+      line-height: 0.98;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      max-width: 10ch;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .mini-card h3,
+    .section-head h2,
+    .feature h3,
+    .product-card h3,
+    .faq-item h3,
+    .about-card h3,
+    .contact-card h3 { margin: 0; }
+
+    .mini-card p,
+    .feature p,
+    .product-card p,
+    .faq-item p,
+    .about-card p,
+    .contact-card p {
+      color: var(--muted);
+      line-height: 1.68;
+    }
+
+    section { padding: 34px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      max-width: 58ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .features-grid,
+    .products-grid,
+    .about-grid,
+    .contact-grid,
+    .footer-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature,
+    .product-card,
+    .about-card,
+    .faq-item,
+    .contact-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,212,0,0.1);
+      border: 1px solid rgba(255,212,0,0.18);
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .product-image {
+      border-radius: 20px;
+      min-height: 220px;
+      padding: 18px;
+      background: linear-gradient(180deg, #1a1f27, #0e1218);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -80px auto;
+      width: 170px;
+      height: 170px;
+      background: radial-gradient(circle, rgba(255,212,0,0.22), transparent 70%);
+    }
+
+    .mock-product {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffe866, var(--yellow));
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-size: 1.3rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 16px 0 14px;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .list {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin: 0 0 18px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--yellow);
+      margin-right: 8px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .about-card.large {
+      padding: 28px;
+    }
+
+    .quote {
+      margin-top: 20px;
+      padding: 18px;
+      border-left: 4px solid var(--yellow);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #d7dde3;
+      line-height: 1.72;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #0d1218;
+      color: var(--text);
+      border-radius: 16px;
+      padding: 15px 16px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(255,212,0,0.44);
+      box-shadow: 0 0 0 4px rgba(255,212,0,0.10);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .helper {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .newsletter {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,212,0,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,212,0,0.16);
+    }
+
+    .newsletter-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .newsletter-row input { flex: 1; }
+
+    footer {
+      padding: 24px 0 50px;
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      align-items: start;
+    }
+
+    .footer-col h4 {
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.88rem;
+      color: #dbe2e9;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      flex-wrap: wrap;
+    }
+
+    .notice {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .footer-grid,
+      .features-grid,
+      .products-grid,
+      .faq-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .products-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 840px) {
+      .nav-links,
+      .nav-actions .desktop-only {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .nav.open {
+        flex-wrap: wrap;
+        padding: 16px 0;
+      }
+
+      .nav.open .nav-links {
+        display: grid;
+        width: 100%;
+        gap: 14px;
+        order: 4;
+        padding-top: 10px;
+      }
+
+      .nav.open .nav-actions .desktop-only {
+        display: inline-flex;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .features-grid,
+      .products-grid,
+      .faq-grid,
+      .footer-grid,
+      .showcase-grid,
+      .field-grid,
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: auto;
+      }
+
+      .newsletter-row {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-tight">
+<body>
+  <div class="topbar">Free shipping on U.S. orders over $50 • Limited drops • New sticker packs live now</div>
 
-    <!-- Notification Toast -->
-    <div id="toast" class="toast shadow-2xl border border-gray-700 font-bold uppercase text-xs tracking-widest">Link copied to clipboard!</div>
-
-    <!-- Navigation -->
-    <header class="bg-blue-900 text-white sticky top-0 z-40 shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-2">
-                <span class="text-xl md:text-2xl font-black tracking-tighter uppercase italic">GetOutOfMyCountryNow</span>
-            </a>
-            <nav class="hidden md:flex space-x-8 font-bold uppercase text-sm tracking-widest">
-                <a href="#shop" class="hover:text-red-500 transition">Shop</a>
-                <a href="#about" class="hover:text-red-500 transition">About</a>
-                <a href="#contact" class="hover:text-red-500 transition">Contact</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="#shop" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-xs font-black uppercase transition">Buy Now</a>
-            </div>
+  <header>
+    <div class="container nav" id="siteNav">
+      <a href="#top" class="brand" aria-label="Go to homepage">
+        <div class="brand-badge">GO</div>
+        <div class="brand-text">
+          <p class="brand-title">Get Out Of My Country Now</p>
+          <div class="brand-sub">Bold merch. Loud message. Direct checkout.</div>
         </div>
-    </header>
+      </a>
 
-    <!-- Hero Section with Flag Background -->
-    <section class="hero-bg text-white py-32 md:py-48 flex items-center justify-center border-b-8 border-red-600">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-none drop-shadow-2xl">
-                GEAR FOR THE <span class="text-red-600">PATRIOT</span>
-            </h2>
-            <p class="text-xl md:text-3xl mb-12 text-gray-100 max-w-3xl mx-auto font-bold drop-shadow-lg">
-                High-quality apparel and accessories for those who stand unapologetically for their country.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="#shop" class="bg-red-600 hover:bg-red-700 text-white px-12 py-5 rounded-md text-xl font-black uppercase transition shadow-2xl transform hover:scale-105">Shop The Collection</a>
-                <a href="#about" class="bg-white hover:bg-gray-100 text-blue-900 px-12 py-5 rounded-md text-xl font-black uppercase transition shadow-2xl transform hover:scale-105">Our Mission</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary desktop-only" href="#contact">Wholesale</a>
+        <a class="btn btn-primary desktop-only" href="#shop">Shop Now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">⚡ New drop live</div>
+          <h1>Merch that <span>gets noticed</span>.</h1>
+          <p>
+            Launch your store with a bold direct-response landing page built to sell bumper stickers, shirts, hats, and accessories. This single-file homepage is structured for Stripe buttons, product embeds, and print-on-demand fulfillment.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#shop">Shop Collection</a>
+            <a class="btn btn-secondary" href="#about">How It Works</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Fast Launch</strong>
+              <span>One-page storefront that can go live quickly on your domain.</span>
             </div>
+            <div class="stat">
+              <strong>Stripe Ready</strong>
+              <span>Replace placeholder buttons with Stripe payment links or embedded checkout.</span>
+            </div>
+            <div class="stat">
+              <strong>POD Friendly</strong>
+              <span>Works well with Printful, Printify, Shopify Buy Buttons, or Ecwid.</span>
+            </div>
+          </div>
         </div>
+
+        <div class="panel showcase">
+          <div class="sticker-mock">
+            <div class="sticker-badge">Featured bumper sticker</div>
+            <div class="sticker-copy">No one voted for this.</div>
+            <div style="font-weight:800; text-transform:uppercase; font-size:0.9rem;">3-pack • weatherproof vinyl • outdoor rated</div>
+          </div>
+
+          <div class="showcase-grid">
+            <div class="mini-card">
+              <h3>Checkout Integration</h3>
+              <p>Add Stripe payment links, Shopify Buy Buttons, or an Ecwid embed without rebuilding the page.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Fulfillment Flow</h3>
+              <p>Connect a print-on-demand partner so orders from your site route automatically to production and shipping.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Product Grid -->
-    <main id="shop" class="container mx-auto px-4 py-24">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b-4 border-blue-900 pb-8">
-            <div>
-                <h3 class="text-4xl font-black uppercase text-blue-900 italic tracking-tighter">Official Merchandise</h3>
-                <p class="text-gray-500 font-bold uppercase text-sm tracking-widest mt-2">Secure checkout via Stripe</p>
-            </div>
-            <div class="mt-4 md:mt-0 text-red-600 font-black uppercase tracking-widest text-lg flex items-center italic">
-                <i data-lucide="shield-check" class="mr-2 w-6 h-6"></i> Premium Quality
-            </div>
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="pill">Built for direct-to-consumer merch</div>
+            <h2>Why this layout converts</h2>
+            <p>It leads with a clear brand, featured product, fast path to checkout, and enough trust-building detail to reduce hesitation.</p>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            
-            <!-- Product 1 -->
-            <div class="product-card bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="T-Shirt" class="w-full h-96 object-cover">
-                    <span class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Best Seller</span>
-                </div>
-                <div class="p-8 flex flex-col flex-grow">
-                    <h4 class="text-2xl font-black uppercase text-gray-900 mb-2">Signature Patriot Tee</h4>
-                    <p class="text-gray-600 mb-8 text-sm flex-grow">Heavyweight premium cotton. Bold graphics that won't fade. Proudly printed in the USA.</p>
-                    <div class="flex items-baseline mb-8">
-                        <span class="text-4xl font-black text-blue-900 tracking-tighter">$34.99</span>
-                    </div>
-                    <div class="grid grid-cols-4 gap-3">
-                        <a href="#" target="_blank" class="col-span-3 flex items-center justify-center bg-blue-900 text-white py-4 rounded-lg font-black hover:bg-blue-800 transition uppercase text-sm tracking-widest shadow-md">
-                            <i data-lucide="shopping-cart" class="w-4 h-4 mr-2"></i> Buy Now
-                        </a>
-                        <button onclick="copyProductLink('#', 'Signature Patriot Tee')" class="col-span-1 flex items-center justify-center border-2 border-gray-200 rounded-lg hover:bg-gray-100 transition text-gray-700" title="Share Link">
-                            <i data-lucide="share-2" class="w-6 h-6"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="icon">🛒</div>
+            <h3>Simple to Monetize</h3>
+            <p>Use direct product buttons, buy-now flows, or embedded carts. You can start with a few products and scale later.</p>
+          </article>
 
-            <!-- Product 2 -->
-            <div class="product-card bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" alt="Hat" class="w-full h-96 object-cover">
-                </div>
-                <div class="p-8 flex flex-col flex-grow">
-                    <h4 class="text-2xl font-black uppercase text-gray-900 mb-2">Classic Trucker Hat</h4>
-                    <p class="text-gray-600 mb-8 text-sm flex-grow">High-profile structured front with breathable mesh back. Adjustable snap closure for a perfect fit.</p>
-                    <div class="flex items-baseline mb-8">
-                        <span class="text-4xl font-black text-blue-900 tracking-tighter">$29.99</span>
-                    </div>
-                    <div class="grid grid-cols-4 gap-3">
-                        <a href="#" target="_blank" class="col-span-3 flex items-center justify-center bg-blue-900 text-white py-4 rounded-lg font-black hover:bg-blue-800 transition uppercase text-sm tracking-widest shadow-md">
-                            <i data-lucide="shopping-cart" class="w-4 h-4 mr-2"></i> Buy Now
-                        </a>
-                        <button onclick="copyProductLink('#', 'Classic Trucker Hat')" class="col-span-1 flex items-center justify-center border-2 border-gray-200 rounded-lg hover:bg-gray-100 transition text-gray-700" title="Share Link">
-                            <i data-lucide="share-2" class="w-6 h-6"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+          <article class="feature">
+            <div class="icon">📦</div>
+            <h3>Made for Fulfillment Partners</h3>
+            <p>Perfect for print-on-demand workflows where a third party prints, packs, and ships after an order is placed.</p>
+          </article>
 
-            <!-- Product 3 -->
-            <div class="product-card bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Hoodie" class="w-full h-96 object-cover">
-                </div>
-                <div class="p-8 flex flex-col flex-grow">
-                    <h4 class="text-2xl font-black uppercase text-gray-900 mb-2">Freedom Hoodie</h4>
-                    <p class="text-gray-600 mb-8 text-sm flex-grow">Double-lined hood with matching drawcord. Soft feel and reduced pilling. Built to last.</p>
-                    <div class="flex items-baseline mb-8">
-                        <span class="text-4xl font-black text-blue-900 tracking-tighter">$59.99</span>
-                    </div>
-                    <div class="grid grid-cols-4 gap-3">
-                        <a href="#" target="_blank" class="col-span-3 flex items-center justify-center bg-blue-900 text-white py-4 rounded-lg font-black hover:bg-blue-800 transition uppercase text-sm tracking-widest shadow-md">
-                            <i data-lucide="shopping-cart" class="w-4 h-4 mr-2"></i> Buy Now
-                        </a>
-                        <button onclick="copyProductLink('#', 'Freedom Hoodie')" class="col-span-1 flex items-center justify-center border-2 border-gray-200 rounded-lg hover:bg-gray-100 transition text-gray-700" title="Share Link">
-                            <i data-lucide="share-2" class="w-6 h-6"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
+          <article class="feature">
+            <div class="icon">⚙️</div>
+            <h3>Easy to Customize</h3>
+            <p>Swap colors, change product cards, update copy, and replace placeholder buttons with live checkout links in minutes.</p>
+          </article>
         </div>
-    </main>
-
-    <!-- Trust Section -->
-    <section class="bg-blue-900 text-white py-24 border-y-8 border-red-600">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div class="p-6">
-                <i data-lucide="truck" class="w-16 h-16 mx-auto mb-6 text-red-600 drop-shadow-lg"></i>
-                <h5 class="text-2xl font-black uppercase mb-4 italic tracking-tighter">Fast Shipping</h5>
-                <p class="text-blue-100 text-sm font-bold uppercase tracking-widest">Orders ship from the USA within 48 hours.</p>
-            </div>
-            <div class="p-6">
-                <i data-lucide="lock" class="w-16 h-16 mx-auto mb-6 text-red-600 drop-shadow-lg"></i>
-                <h5 class="text-2xl font-black uppercase mb-4 italic tracking-tighter">Secure Checkout</h5>
-                <p class="text-blue-100 text-sm font-bold uppercase tracking-widest">Bank-level security provided by Stripe.</p>
-            </div>
-            <div class="p-6">
-                <i data-lucide="flag" class="w-16 h-16 mx-auto mb-6 text-red-600 drop-shadow-lg"></i>
-                <h5 class="text-2xl font-black uppercase mb-4 italic tracking-tighter">Family Owned</h5>
-                <p class="text-blue-100 text-sm font-bold uppercase tracking-widest">Proudly independent and American operated.</p>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-24 pb-12">
-        <div class="container mx-auto px-4 text-center">
-            <h4 class="text-3xl font-black italic uppercase mb-4 tracking-tighter">GetOutOfMyCountryNow</h4>
-            <p class="text-gray-400 max-w-lg mx-auto mb-12 font-medium">Supporting patriots across the nation. Join the movement and wear your message with pride.</p>
-            
-            <div class="flex justify-center space-x-8 mb-16">
-                <a href="#" class="text-gray-400 hover:text-red-600 transition"><i data-lucide="facebook" class="w-8 h-8"></i></a>
-                <a href="#" class="text-gray-400 hover:text-red-600 transition"><i data-lucide="twitter" class="w-8 h-8"></i></a>
-                <a href="#" class="text-gray-400 hover:text-red-600 transition"><i data-lucide="instagram" class="w-8 h-8"></i></a>
-            </div>
-
-            <div class="border-t border-gray-800 pt-10 text-gray-500 text-xs font-black uppercase tracking-[0.2em]">
-                &copy; 2026 GetOutOfMyCountryNow. All Rights Reserved.
-            </div>
+    <section id="shop">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="pill">Featured products</div>
+            <h2>Shop the drop</h2>
+            <p>These product cards are ready for your real product photos, descriptions, and checkout URLs.</p>
+          </div>
+          <a class="btn btn-secondary" href="#contact">Need bulk pricing?</a>
         </div>
-    </footer>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <div class="mock-product">Sticker<br>Pack</div>
+            </div>
+            <h3>Bumper Sticker Pack</h3>
+            <p>Best for first-time buyers and impulse purchases. Designed for cars, coolers, toolboxes, and laptops.</p>
+            <div class="price-row">
+              <div class="price">$14.99</div>
+              <div class="tag">Best seller</div>
+            </div>
+            <ul class="list">
+              <li>Outdoor weatherproof vinyl</li>
+              <li>Ships in 2–5 business days</li>
+              <li>Perfect starter product</li>
+            </ul>
+            <a class="btn btn-primary" href="#" data-product="bumper-sticker-pack">Buy Now</a>
+          </article>
 
-        function showToast(message) {
-            const toast = document.getElementById("toast");
-            toast.innerText = message;
-            toast.classList.add("show");
-            setTimeout(() => {
-                toast.classList.remove("show");
-            }, 3000);
-        }
+          <article class="product-card">
+            <div class="product-image">
+              <div class="mock-product">Graphic<br>Tee</div>
+            </div>
+            <h3>Classic Statement Tee</h3>
+            <p>A simple hero product for the brand. Use this card for your top-selling slogan or campaign drop.</p>
+            <div class="price-row">
+              <div class="price">$29.99</div>
+              <div class="tag">New</div>
+            </div>
+            <ul class="list">
+              <li>Unisex fit</li>
+              <li>Soft cotton blend</li>
+              <li>Print-on-demand ready</li>
+            </ul>
+            <a class="btn btn-primary" href="#" data-product="classic-statement-tee">Buy Now</a>
+          </article>
 
-        function copyProductLink(stripeUrl, productName) {
-            // Priority 1: Use the Stripe Payment Link if provided
-            // Priority 2: Use the current page URL with a hash for that product
-            const shareUrl = stripeUrl !== '#' ? stripeUrl : window.location.origin + window.location.pathname + "#" + productName.replace(/\s+/g, '-').toLowerCase();
-            
-            // Modern copy to clipboard with fallback
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(shareUrl).then(() => {
-                    showToast(`LINK FOR ${productName.toUpperCase()} COPIED!`);
-                });
-            } else {
-                const textArea = document.createElement("textarea");
-                textArea.value = shareUrl;
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    showToast(`LINK FOR ${productName.toUpperCase()} COPIED!`);
-                } catch (err) {
-                    console.error('Fallback copy failed', err);
-                }
-                document.body.removeChild(textArea);
-            }
-        }
-    </script>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="mock-product">Trucker<br>Hat</div>
+            </div>
+            <h3>Trucker Cap</h3>
+            <p>A clean add-on product that raises average order value and gives you a second strong visual item.</p>
+            <div class="price-row">
+              <div class="price">$24.99</div>
+              <div class="tag">Fan favorite</div>
+            </div>
+            <ul class="list">
+              <li>Structured front panel</li>
+              <li>Adjustable snapback</li>
+              <li>Easy upsell item</li>
+            </ul>
+            <a class="btn btn-primary" href="#" data-product="trucker-cap">Buy Now</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <div class="mock-product">Bundle<br>Deal</div>
+            </div>
+            <h3>Starter Bundle</h3>
+            <p>Bundle a shirt, hat, and sticker pack together for a higher-ticket product with strong value perception.</p>
+            <div class="price-row">
+              <div class="price">$59.99</div>
+              <div class="tag">Value</div>
+            </div>
+            <ul class="list">
+              <li>Higher average order value</li>
+              <li>Great for promotions</li>
+              <li>Easy featured offer</li>
+            </ul>
+            <a class="btn btn-primary" href="#" data-product="starter-bundle">Buy Bundle</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <article class="about-card large">
+          <div class="pill">About the brand</div>
+          <h2 style="margin-top:12px; font-size:clamp(1.9rem,4vw,3rem); line-height:1; letter-spacing:-0.04em; text-transform:uppercase;">Built for bold messaging.</h2>
+          <p>
+            This homepage is designed for a strong merch-first brand. It gives you a featured hero product, product cards, FAQ, contact capture, and an easy path to connecting third-party checkout and fulfillment.
+          </p>
+          <p>
+            Keep your messaging sharp, visually consistent, and product-focused. Swap in your real slogans and images where needed, and connect live buy buttons once your backend stack is ready.
+          </p>
+          <div class="quote">
+            Suggested stack: custom landing page + Stripe Payment Links or Shopify Buy Buttons + Printful or Printify for fulfillment.
+          </div>
+        </article>
+
+        <article class="about-card">
+          <h3>Recommended Setup</h3>
+          <p>Use this page as the front-end storefront and connect the commerce layer behind it.</p>
+          <ul class="list">
+            <li>Stripe for checkout links</li>
+            <li>Printful or Printify for print-on-demand</li>
+            <li>Custom domain on your current host</li>
+            <li>Optional email capture with Mailchimp or ConvertKit</li>
+          </ul>
+          <h3 style="margin-top:22px;">What to Replace First</h3>
+          <ul class="list">
+            <li>Product names and prices</li>
+            <li>Placeholder CTA links</li>
+            <li>Mock product blocks with real images</li>
+            <li>Contact form endpoint</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="pill">Common questions</div>
+            <h2>FAQ</h2>
+            <p>Use these answers to reduce support requests and increase confidence before checkout.</p>
+          </div>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>How do customers buy from the site?</h3>
+            <p>Replace each placeholder product button with a Stripe payment link, Shopify Buy Button, Ecwid product link, or embedded checkout component.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Can fulfillment be automated?</h3>
+            <p>Yes. Connect a print-on-demand provider so they receive the order details, produce the item, and ship it to the customer for you.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Do I need to hold inventory?</h3>
+            <p>No. A print-on-demand setup lets you avoid buying inventory upfront, though margins will be lower than bulk ordering yourself.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Can I add more products later?</h3>
+            <p>Yes. Add additional product cards, duplicate sections, or swap the current grid for an embedded storefront once your catalog grows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <article class="contact-card">
+          <div class="pill">Get in touch</div>
+          <h2 style="margin-top:12px; font-size:clamp(1.9rem,4vw,3rem); line-height:1; letter-spacing:-0.04em; text-transform:uppercase;">Questions, wholesale, or collabs</h2>
+          <p>Use this section for support, wholesale inquiries, partnerships, or creator collaborations.</p>
+
+          <div class="contact-list">
+            <div class="contact-item"><strong>Email</strong><br><span style="color:var(--muted)">support@getoutofmycountrynow.com</span></div>
+            <div class="contact-item"><strong>Wholesale</strong><br><span style="color:var(--muted)">bulk orders, reseller requests, event packs</span></div>
+            <div class="contact-item"><strong>Turnaround</strong><br><span style="color:var(--muted)">reply within 1–2 business days</span></div>
+          </div>
+
+          <div class="newsletter">
+            <strong style="font-size:1.15rem; display:block;">Get launch alerts and new drops</strong>
+            <div class="helper">Connect this form to your email platform of choice to build a list before or after launch.</div>
+            <div class="newsletter-row">
+              <input type="email" placeholder="Enter your email" aria-label="Email address">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <h3>Contact Form</h3>
+          <p>This form is front-end only right now. Connect it to Formspree, Basin, Netlify Forms, or your own backend endpoint.</p>
+
+          <form id="contactForm">
+            <div class="field-grid">
+              <input type="text" name="name" placeholder="Full name" required>
+              <input type="email" name="email" placeholder="Email address" required>
+            </div>
+            <div class="field-grid">
+              <select name="topic" required>
+                <option value="">Select topic</option>
+                <option>Customer support</option>
+                <option>Wholesale inquiry</option>
+                <option>Collab / partnership</option>
+                <option>Press</option>
+              </select>
+              <input type="text" name="order" placeholder="Order number (optional)">
+            </div>
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+          <div class="helper" id="formMessage">Demo form only. Connect a real form handler before going live.</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="margin-bottom:10px;">
+            <div class="brand-badge">GO</div>
+            <div class="brand-text">
+              <p class="brand-title">Get Out Of My Country Now</p>
+              <div class="brand-sub">Official merch storefront</div>
+            </div>
+          </div>
+          <p>Single-page merch storefront designed for bold product drops, direct checkout, and third-party fulfillment.</p>
+          <div class="notice">Replace all placeholder product copy, support details, and legal text with your final approved content before launch.</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#shop">Bumper stickers</a>
+          <a href="#shop">Tees</a>
+          <a href="#shop">Hats</a>
+          <a href="#shop">Bundles</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Shipping Policy</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Refunds</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Get Out Of My Country Now. All rights reserved.</div>
+        <div>Built for direct merchandising • Replace placeholder checkout links before launch</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    mobileToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMessage.textContent = 'Demo only: connect this form to a service like Formspree, Basin, Netlify Forms, or your own backend.';
+      formMessage.style.color = '#ffe57d';
+      form.reset();
+    });
+
+    document.querySelectorAll('[data-product]').forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const name = button.getAttribute('data-product');
+        alert(`Replace this placeholder with your live checkout link for: ${name}`);
+      });
+    });
+  </script>
 </body>
 </html>
+
