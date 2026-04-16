@@ -4,25 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get Out Of My Country Now | Official Store</title>
-  <meta name="description" content="Official merchandise store for Get Out Of My Country Now. Shop bumper stickers, tees, hats, and more." />
+  <meta name="description" content="Official merchandise store for Get Out Of My Country Now. Shop patriotic bumper stickers, tees, hats, and more." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0d10;
-      --panel: #12161b;
-      --panel-2: #171c23;
-      --text: #f3f5f7;
-      --muted: #a5b0bc;
-      --line: rgba(255,255,255,0.08);
-      --yellow: #ffd400;
-      --yellow-dark: #c9a700;
-      --red: #d62828;
-      --green: #16a34a;
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
-      --radius: 20px;
-      --max: 1240px;
+      --bg: #061325;
+      --bg-2: #0b1c35;
+      --panel: rgba(10, 22, 43, 0.88);
+      --panel-solid: #0f2343;
+      --panel-2: rgba(16, 33, 61, 0.92);
+      --text: #f8fbff;
+      --muted: #bfd0ea;
+      --line: rgba(255,255,255,0.12);
+      --red: #c1121f;
+      --red-2: #e63946;
+      --white: #ffffff;
+      --blue: #0a3161;
+      --blue-2: #123b73;
+      --gold: #ffd166;
+      --shadow: 0 24px 70px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1260px;
     }
 
     * { box-sizing: border-box; }
@@ -30,10 +34,25 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(214,40,40,0.16), transparent 28%),
-        linear-gradient(180deg, #0a0c0f 0%, #0d1116 100%);
       color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(230,57,70,0.22), transparent 26%),
+        radial-gradient(circle at top right, rgba(255,255,255,0.07), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(18,59,115,0.4), transparent 30%),
+        linear-gradient(180deg, #04101f 0%, #07172d 38%, #091b36 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      background-image:
+        linear-gradient(90deg, transparent 0 5%, rgba(255,255,255,0.8) 5% 10%, transparent 10% 15%, rgba(193,18,31,0.9) 15% 20%, transparent 20% 25%, rgba(255,255,255,0.8) 25% 30%, transparent 30% 35%, rgba(193,18,31,0.9) 35% 40%, transparent 40% 45%, rgba(255,255,255,0.8) 45% 50%, transparent 50% 55%, rgba(193,18,31,0.9) 55% 60%, transparent 60% 65%, rgba(255,255,255,0.8) 65% 70%, transparent 70% 75%, rgba(193,18,31,0.9) 75% 80%, transparent 80% 85%, rgba(255,255,255,0.8) 85% 90%, transparent 90% 100%);
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.4), transparent 40%);
+      z-index: 0;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -42,26 +61,29 @@
     .container {
       width: min(100% - 32px, var(--max));
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .topbar {
-      background: var(--yellow);
-      color: #111;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 0.03em;
+      background: linear-gradient(90deg, var(--red) 0%, #d62839 48%, var(--blue) 100%);
+      color: var(--white);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       text-align: center;
-      padding: 10px 14px;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(11,13,16,0.8);
-      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      background: rgba(4, 16, 31, 0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav {
@@ -69,46 +91,43 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      min-height: 78px;
+      min-height: 86px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       min-width: 0;
     }
 
     .brand-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
       display: grid;
       place-items: center;
-      background: var(--yellow);
-      color: #111;
+      background: linear-gradient(135deg, var(--red) 0%, #ef4444 42%, var(--white) 42%, var(--white) 58%, var(--blue) 58%, var(--blue) 100%);
+      color: #061325;
       font-weight: 900;
       box-shadow: var(--shadow);
       flex: 0 0 auto;
-    }
-
-    .brand-text {
-      min-width: 0;
+      border: 1px solid rgba(255,255,255,0.22);
     }
 
     .brand-title {
       margin: 0;
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: 0.02em;
+      line-height: 1.02;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
     }
 
     .brand-sub {
-      margin-top: 4px;
+      margin-top: 5px;
       color: var(--muted);
-      font-size: 0.83rem;
+      font-size: 0.84rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -119,10 +138,13 @@
       align-items: center;
       gap: 22px;
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+    }
 
     .nav-actions {
       display: flex;
@@ -136,52 +158,70 @@
       cursor: pointer;
       border-radius: 999px;
       padding: 14px 20px;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 0.95rem;
-      transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+      letter-spacing: 0.02em;
+      transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
 
     .btn:hover { transform: translateY(-1px); }
     .btn:active { transform: translateY(0); }
 
     .btn-primary {
-      background: var(--yellow);
-      color: #111;
-      box-shadow: 0 14px 30px rgba(255,212,0,0.18);
+      background: linear-gradient(90deg, var(--red) 0%, #dc2626 55%, #ef4444 100%);
+      color: var(--white);
+      box-shadow: 0 16px 38px rgba(193,18,31,0.3);
     }
 
-    .btn-primary:hover { background: #ffe14a; }
+    .btn-primary:hover { filter: brightness(1.05); }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-blue {
+      background: linear-gradient(90deg, #0f3f82 0%, #1d4f91 100%);
+      color: var(--white);
+      box-shadow: 0 16px 38px rgba(10,49,97,0.28);
     }
 
     .hero {
-      padding: 64px 0 40px;
+      padding: 72px 0 42px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 26px;
       align-items: stretch;
     }
 
     .hero-card,
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-      border: 1px solid var(--line);
+    .panel,
+    .feature,
+    .product-card,
+    .about-card,
+    .faq-item,
+    .contact-card,
+    .mini-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 28px;
       box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
     }
 
     .hero-card {
-      padding: 34px;
+      padding: 38px;
       position: relative;
       overflow: hidden;
-      min-height: 580px;
+      min-height: 620px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -191,75 +231,88 @@
     .hero-card::before {
       content: "";
       position: absolute;
-      inset: auto -80px -120px auto;
-      width: 340px;
-      height: 340px;
-      background: radial-gradient(circle, rgba(255,212,0,0.18), transparent 70%);
+      inset: auto -90px -120px auto;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 62%);
       z-index: -1;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--white) 50%, var(--blue) 100%);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
+      padding: 9px 13px;
       border-radius: 999px;
-      background: rgba(255,212,0,0.08);
-      border: 1px solid rgba(255,212,0,0.18);
-      color: #ffe57d;
-      font-size: 0.82rem;
-      font-weight: 800;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       width: fit-content;
       margin-bottom: 18px;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
       font-weight: 900;
       text-transform: uppercase;
       max-width: 9ch;
     }
 
-    .hero h1 span { color: var(--yellow); }
+    .hero h1 .accent-white { color: #ffffff; }
+    .hero h1 .accent-red { color: #ff7b88; }
+    .hero h1 .accent-blue { color: #8fc4ff; }
 
     .hero p {
       margin: 18px 0 0;
-      max-width: 62ch;
+      max-width: 60ch;
       color: var(--muted);
-      font-size: 1.04rem;
-      line-height: 1.72;
+      font-size: 1.05rem;
+      line-height: 1.74;
     }
 
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .stat {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 18px;
       padding: 16px;
     }
 
     .stat strong {
       display: block;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       margin-bottom: 4px;
+      color: var(--white);
     }
 
     .stat span {
@@ -275,11 +328,13 @@
     }
 
     .sticker-mock {
-      background: linear-gradient(180deg, #ffe866, var(--yellow));
-      border-radius: 22px;
-      min-height: 260px;
-      padding: 22px;
-      color: #111;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.12)),
+        linear-gradient(135deg, #d71920 0%, #d71920 33%, #ffffff 33%, #ffffff 66%, #0a3161 66%, #0a3161 100%);
+      border-radius: 24px;
+      min-height: 300px;
+      padding: 24px;
+      color: #061325;
       box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 18px 40px rgba(0,0,0,0.25);
       display: flex;
       flex-direction: column;
@@ -296,29 +351,36 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       font-weight: 900;
-      background: rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.58);
     }
 
     .sticker-copy {
-      font-size: clamp(1.8rem, 4.2vw, 3.15rem);
-      line-height: 0.98;
+      font-size: clamp(1.85rem, 4.2vw, 3.2rem);
+      line-height: 0.96;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.045em;
       max-width: 10ch;
     }
 
-    .showcase-grid {
+    .showcase-grid,
+    .features-grid,
+    .products-grid,
+    .about-grid,
+    .contact-grid,
+    .footer-grid,
+    .faq-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
 
+    .showcase-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
     .mini-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 22px;
       padding: 18px;
+      border-radius: 22px;
     }
 
     .mini-card h3,
@@ -327,19 +389,23 @@
     .product-card h3,
     .faq-item h3,
     .about-card h3,
-    .contact-card h3 { margin: 0; }
+    .contact-card h3,
+    .login-card h3 {
+      margin: 0;
+    }
 
     .mini-card p,
     .feature p,
     .product-card p,
     .faq-item p,
     .about-card p,
-    .contact-card p {
+    .contact-card p,
+    .login-card p {
       color: var(--muted);
       line-height: 1.68;
     }
 
-    section { padding: 34px 0; }
+    section { padding: 36px 0; }
 
     .section-head {
       display: flex;
@@ -350,9 +416,9 @@
     }
 
     .section-head h2 {
-      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-size: clamp(1.95rem, 4vw, 3.15rem);
       line-height: 1;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
       font-weight: 900;
       text-transform: uppercase;
     }
@@ -368,62 +434,48 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 999px;
       padding: 10px 14px;
-      color: var(--muted);
-      font-size: 0.86rem;
-      font-weight: 700;
+      color: #e8f1ff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
-    .features-grid,
-    .products-grid,
-    .about-grid,
-    .contact-grid,
-    .footer-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .features-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    .features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
     .feature,
     .product-card,
     .about-card,
     .faq-item,
     .contact-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 24px;
       padding: 22px;
-      box-shadow: var(--shadow);
+      border-radius: 24px;
     }
 
     .icon {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       border-radius: 16px;
       display: grid;
       place-items: center;
-      background: rgba(255,212,0,0.1);
-      border: 1px solid rgba(255,212,0,0.18);
+      background: linear-gradient(135deg, rgba(230,57,70,0.22), rgba(15,63,130,0.32));
+      border: 1px solid rgba(255,255,255,0.14);
       font-size: 1.3rem;
       margin-bottom: 14px;
     }
 
-    .products-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    .products-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
     .product-image {
-      border-radius: 20px;
+      border-radius: 22px;
       min-height: 220px;
       padding: 18px;
-      background: linear-gradient(180deg, #1a1f27, #0e1218);
-      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -432,13 +484,11 @@
       overflow: hidden;
     }
 
-    .product-image::after {
+    .product-image::before {
       content: "";
       position: absolute;
-      inset: auto -60px -80px auto;
-      width: 170px;
-      height: 170px;
-      background: radial-gradient(circle, rgba(255,212,0,0.22), transparent 70%);
+      inset: 0;
+      background: linear-gradient(135deg, rgba(193,18,31,0.18), rgba(255,255,255,0.08), rgba(10,49,97,0.24));
     }
 
     .mock-product {
@@ -446,8 +496,8 @@
       max-width: 220px;
       aspect-ratio: 1 / 1;
       border-radius: 24px;
-      background: linear-gradient(180deg, #ffe866, var(--yellow));
-      color: #111;
+      background: linear-gradient(135deg, #c1121f 0%, #ffffff 49%, #0a3161 100%);
+      color: #05111f;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -474,16 +524,18 @@
     .price {
       font-size: 1.3rem;
       font-weight: 900;
+      color: var(--white);
     }
 
     .tag {
       padding: 7px 10px;
       border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 800;
+      font-size: 0.76rem;
+      font-weight: 900;
       text-transform: uppercase;
-      border: 1px solid var(--line);
-      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #ebf3ff;
+      background: rgba(255,255,255,0.04);
     }
 
     .list {
@@ -497,38 +549,29 @@
     }
 
     .list li::before {
-      content: "•";
-      color: var(--yellow);
+      content: "★";
+      color: #ffd166;
       margin-right: 8px;
+      font-size: 0.78rem;
     }
 
-    .about-grid {
-      grid-template-columns: 1.1fr 0.9fr;
-    }
+    .about-grid { grid-template-columns: 1.1fr 0.9fr; }
 
-    .about-card.large {
-      padding: 28px;
-    }
+    .about-card.large { padding: 30px; }
 
     .quote {
       margin-top: 20px;
       padding: 18px;
-      border-left: 4px solid var(--yellow);
+      border-left: 4px solid #ff8b95;
       border-radius: 14px;
-      background: rgba(255,255,255,0.03);
-      color: #d7dde3;
+      background: rgba(255,255,255,0.04);
+      color: #e3efff;
       line-height: 1.72;
     }
 
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
+    .faq-grid { grid-template-columns: 1fr 1fr; }
 
-    .contact-grid {
-      grid-template-columns: 0.95fr 1.05fr;
-    }
+    .contact-grid { grid-template-columns: 0.95fr 1.05fr; }
 
     .contact-list {
       display: grid;
@@ -538,9 +581,9 @@
 
     .contact-item {
       padding: 14px 16px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 16px;
-      background: rgba(255,255,255,0.02);
+      background: rgba(255,255,255,0.03);
     }
 
     form {
@@ -558,21 +601,25 @@
     textarea,
     select {
       width: 100%;
-      border: 1px solid var(--line);
-      background: #0d1218;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(5,17,31,0.82);
       color: var(--text);
       border-radius: 16px;
       padding: 15px 16px;
       font: inherit;
       outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
+
+    input::placeholder,
+    textarea::placeholder { color: #98adc8; }
 
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: rgba(255,212,0,0.44);
-      box-shadow: 0 0 0 4px rgba(255,212,0,0.10);
+      border-color: rgba(143,196,255,0.7);
+      box-shadow: 0 0 0 4px rgba(143,196,255,0.12);
+      background: rgba(5,17,31,0.95);
     }
 
     textarea {
@@ -591,8 +638,8 @@
       margin-top: 24px;
       padding: 24px;
       border-radius: 24px;
-      background: linear-gradient(135deg, rgba(255,212,0,0.12), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,212,0,0.16);
+      background: linear-gradient(135deg, rgba(193,18,31,0.18), rgba(255,255,255,0.06), rgba(10,49,97,0.2));
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .newsletter-row {
@@ -603,9 +650,40 @@
 
     .newsletter-row input { flex: 1; }
 
+    .login-preview {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .login-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .login-credentials {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .credential-pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.8rem;
+      color: #edf5ff;
+      font-weight: 700;
+    }
+
     footer {
       padding: 24px 0 50px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(255,255,255,0.08);
       margin-top: 20px;
     }
 
@@ -617,9 +695,9 @@
     .footer-col h4 {
       margin: 0 0 12px;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       font-size: 0.88rem;
-      color: #dbe2e9;
+      color: #edf5ff;
     }
 
     .footer-col a,
@@ -633,7 +711,7 @@
     .footer-bottom {
       margin-top: 20px;
       padding-top: 18px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(255,255,255,0.08);
       display: flex;
       justify-content: space-between;
       gap: 18px;
@@ -652,13 +730,122 @@
     .mobile-toggle {
       display: none;
       background: transparent;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,0.14);
       color: var(--text);
       width: 46px;
       height: 46px;
       border-radius: 14px;
       font-size: 1.1rem;
       cursor: pointer;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 8, 18, 0.78);
+      backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+    }
+
+    .modal.open { display: flex; }
+
+    .modal-card {
+      width: min(100%, 520px);
+      background: linear-gradient(180deg, rgba(9,26,49,0.96), rgba(7,20,39,0.98));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .modal-stripe {
+      height: 10px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--white) 50%, var(--blue) 100%);
+    }
+
+    .modal-body {
+      padding: 28px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+    }
+
+    .close-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .demo-note {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #d8e8ff;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .toggle-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 18px 0;
+      padding: 6px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .toggle-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .toggle-btn.active {
+      background: linear-gradient(90deg, rgba(193,18,31,0.28), rgba(10,49,97,0.3));
+      color: var(--white);
+    }
+
+    .hidden { display: none !important; }
+
+    .success-banner {
+      margin-top: 12px;
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: rgba(22,163,74,0.15);
+      border: 1px solid rgba(22,163,74,0.3);
+      color: #d7ffe4;
+      font-size: 0.9rem;
+      display: none;
     }
 
     @media (max-width: 1100px) {
@@ -712,7 +899,9 @@
       .footer-grid,
       .showcase-grid,
       .field-grid,
-      .hero-stats {
+      .hero-stats,
+      .login-preview,
+      .toggle-row {
         grid-template-columns: 1fr;
       }
 
@@ -727,27 +916,28 @@
   </style>
 </head>
 <body>
-  <div class="topbar">Free shipping on U.S. orders over $50 • Limited drops • New sticker packs live now</div>
+  <div class="topbar">Patriotic merch drop live now • Free U.S. shipping over $50 • Sign in for launch alerts</div>
 
   <header>
     <div class="container nav" id="siteNav">
       <a href="#top" class="brand" aria-label="Go to homepage">
         <div class="brand-badge">GO</div>
-        <div class="brand-text">
+        <div>
           <p class="brand-title">Get Out Of My Country Now</p>
-          <div class="brand-sub">Bold merch. Loud message. Direct checkout.</div>
+          <div class="brand-sub">Patriotic merch. Bold statements. Direct checkout.</div>
         </div>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
         <a href="#shop">Shop</a>
         <a href="#about">About</a>
+        <a href="#members">Members</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-secondary desktop-only" href="#contact">Wholesale</a>
+        <button class="btn btn-secondary desktop-only" id="loginTrigger" type="button">Sign In</button>
         <a class="btn btn-primary desktop-only" href="#shop">Shop Now</a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
       </div>
@@ -758,27 +948,27 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-card">
-          <div class="eyebrow">⚡ New drop live</div>
-          <h1>Merch that <span>gets noticed</span>.</h1>
+          <div class="eyebrow">★ Limited patriotic drop</div>
+          <h1><span class="accent-white">Red.</span> <span class="accent-red">White.</span> <span class="accent-blue">Bold.</span></h1>
           <p>
-            Launch your store with a bold direct-response landing page built to sell bumper stickers, shirts, hats, and accessories. This single-file homepage is structured for Stripe buttons, product embeds, and print-on-demand fulfillment.
+            A louder, more patriotic storefront for Get Out Of My Country Now, rebuilt with stronger red, white, and blue branding, a member login entry point, and product sections ready for live checkout integration.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#shop">Shop Collection</a>
-            <a class="btn btn-secondary" href="#about">How It Works</a>
+            <button class="btn btn-blue" id="heroLoginTrigger" type="button">Member Login</button>
           </div>
           <div class="hero-stats">
             <div class="stat">
-              <strong>Fast Launch</strong>
-              <span>One-page storefront that can go live quickly on your domain.</span>
+              <strong>Patriotic Rebrand</strong>
+              <span>Red, white, and blue visuals across the hero, products, and site chrome.</span>
             </div>
             <div class="stat">
-              <strong>Stripe Ready</strong>
-              <span>Replace placeholder buttons with Stripe payment links or embedded checkout.</span>
+              <strong>Login Included</strong>
+              <span>Added a front-end sign in / sign up modal you can later connect to Firebase Auth.</span>
             </div>
             <div class="stat">
-              <strong>POD Friendly</strong>
-              <span>Works well with Printful, Printify, Shopify Buy Buttons, or Ecwid.</span>
+              <strong>Store Ready</strong>
+              <span>Works with Stripe links, Shopify Buy Buttons, or a full embedded storefront.</span>
             </div>
           </div>
         </div>
@@ -786,18 +976,18 @@
         <div class="panel showcase">
           <div class="sticker-mock">
             <div class="sticker-badge">Featured bumper sticker</div>
-            <div class="sticker-copy">No one voted for this.</div>
-            <div style="font-weight:800; text-transform:uppercase; font-size:0.9rem;">3-pack • weatherproof vinyl • outdoor rated</div>
+            <div class="sticker-copy">Texas made first contact with aliens.</div>
+            <div style="font-weight:900; text-transform:uppercase; font-size:0.9rem;">3-pack • weatherproof vinyl • outdoor rated</div>
           </div>
 
           <div class="showcase-grid">
             <div class="mini-card">
               <h3>Checkout Integration</h3>
-              <p>Add Stripe payment links, Shopify Buy Buttons, or an Ecwid embed without rebuilding the page.</p>
+              <p>Swap each product button for your real Stripe, Shopify, or Ecwid checkout flow without redesigning the page.</p>
             </div>
             <div class="mini-card">
-              <h3>Fulfillment Flow</h3>
-              <p>Connect a print-on-demand partner so orders from your site route automatically to production and shipping.</p>
+              <h3>Member Area Entry</h3>
+              <p>The new sign in modal gives you a clean starting point for supporter accounts, saved carts, or exclusive drops.</p>
             </div>
           </div>
         </div>
@@ -808,9 +998,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="pill">Built for direct-to-consumer merch</div>
-            <h2>Why this layout converts</h2>
-            <p>It leads with a clear brand, featured product, fast path to checkout, and enough trust-building detail to reduce hesitation.</p>
+            <div class="pill">Built for a patriotic merch brand</div>
+            <h2>More presence. More energy.</h2>
+            <p>This version leans harder into a patriotic visual identity while keeping the storefront simple, modern, and conversion-focused.</p>
           </div>
         </div>
 
@@ -818,19 +1008,19 @@
           <article class="feature">
             <div class="icon">🛒</div>
             <h3>Simple to Monetize</h3>
-            <p>Use direct product buttons, buy-now flows, or embedded carts. You can start with a few products and scale later.</p>
+            <p>Keep direct buy-now flows, connect live product buttons, and start selling without rebuilding the page structure.</p>
           </article>
 
           <article class="feature">
-            <div class="icon">📦</div>
-            <h3>Made for Fulfillment Partners</h3>
-            <p>Perfect for print-on-demand workflows where a third party prints, packs, and ships after an order is placed.</p>
+            <div class="icon">🔐</div>
+            <h3>Login Ready</h3>
+            <p>A styled login/sign-up modal is already built in, so the next step is wiring it to your preferred auth provider.</p>
           </article>
 
           <article class="feature">
-            <div class="icon">⚙️</div>
-            <h3>Easy to Customize</h3>
-            <p>Swap colors, change product cards, update copy, and replace placeholder buttons with live checkout links in minutes.</p>
+            <div class="icon">🇺🇸</div>
+            <h3>Stronger Brand Identity</h3>
+            <p>Red, white, and blue gradients, accents, and highlighted modules make the site feel more patriotic and merch-forward.</p>
           </article>
         </div>
       </div>
@@ -842,7 +1032,7 @@
           <div>
             <div class="pill">Featured products</div>
             <h2>Shop the drop</h2>
-            <p>These product cards are ready for your real product photos, descriptions, and checkout URLs.</p>
+            <p>These cards are ready for your real product photos, real pricing, and live checkout URLs.</p>
           </div>
           <a class="btn btn-secondary" href="#contact">Need bulk pricing?</a>
         </div>
@@ -853,7 +1043,7 @@
               <div class="mock-product">Sticker<br>Pack</div>
             </div>
             <h3>Bumper Sticker Pack</h3>
-            <p>Best for first-time buyers and impulse purchases. Designed for cars, coolers, toolboxes, and laptops.</p>
+            <p>Fast-moving, lower-ticket merch designed for easy impulse buys and campaign-style drops.</p>
             <div class="price-row">
               <div class="price">$14.99</div>
               <div class="tag">Best seller</div>
@@ -861,7 +1051,7 @@
             <ul class="list">
               <li>Outdoor weatherproof vinyl</li>
               <li>Ships in 2–5 business days</li>
-              <li>Perfect starter product</li>
+              <li>Easy first purchase item</li>
             </ul>
             <a class="btn btn-primary" href="#" data-product="bumper-sticker-pack">Buy Now</a>
           </article>
@@ -871,7 +1061,7 @@
               <div class="mock-product">Graphic<br>Tee</div>
             </div>
             <h3>Classic Statement Tee</h3>
-            <p>A simple hero product for the brand. Use this card for your top-selling slogan or campaign drop.</p>
+            <p>Your hero apparel product with strong visual presence and room for drop-based messaging.</p>
             <div class="price-row">
               <div class="price">$29.99</div>
               <div class="tag">New</div>
@@ -889,7 +1079,7 @@
               <div class="mock-product">Trucker<br>Hat</div>
             </div>
             <h3>Trucker Cap</h3>
-            <p>A clean add-on product that raises average order value and gives you a second strong visual item.</p>
+            <p>A strong add-on product that helps increase average order value while rounding out the collection.</p>
             <div class="price-row">
               <div class="price">$24.99</div>
               <div class="tag">Fan favorite</div>
@@ -897,7 +1087,7 @@
             <ul class="list">
               <li>Structured front panel</li>
               <li>Adjustable snapback</li>
-              <li>Easy upsell item</li>
+              <li>Easy bundle product</li>
             </ul>
             <a class="btn btn-primary" href="#" data-product="trucker-cap">Buy Now</a>
           </article>
@@ -907,7 +1097,7 @@
               <div class="mock-product">Bundle<br>Deal</div>
             </div>
             <h3>Starter Bundle</h3>
-            <p>Bundle a shirt, hat, and sticker pack together for a higher-ticket product with strong value perception.</p>
+            <p>Combine a shirt, hat, and sticker pack into one higher-value offer for supporters who want the full set.</p>
             <div class="price-row">
               <div class="price">$59.99</div>
               <div class="tag">Value</div>
@@ -927,34 +1117,41 @@
       <div class="container about-grid">
         <article class="about-card large">
           <div class="pill">About the brand</div>
-          <h2 style="margin-top:12px; font-size:clamp(1.9rem,4vw,3rem); line-height:1; letter-spacing:-0.04em; text-transform:uppercase;">Built for bold messaging.</h2>
+          <h2 style="margin-top:12px; font-size:clamp(1.95rem,4vw,3.15rem); line-height:1; letter-spacing:-0.05em; text-transform:uppercase;">Built for louder patriotic merch.</h2>
           <p>
-            This homepage is designed for a strong merch-first brand. It gives you a featured hero product, product cards, FAQ, contact capture, and an easy path to connecting third-party checkout and fulfillment.
+            This updated homepage pushes the brand harder visually, gives you a stronger patriotic tone, and adds a cleaner supporter login entry point without changing the one-page storefront structure.
           </p>
           <p>
-            Keep your messaging sharp, visually consistent, and product-focused. Swap in your real slogans and images where needed, and connect live buy buttons once your backend stack is ready.
+            You can now use this as the public storefront while later connecting member access, checkout, and fulfillment behind the scenes.
           </p>
           <div class="quote">
-            Suggested stack: custom landing page + Stripe Payment Links or Shopify Buy Buttons + Printful or Printify for fulfillment.
+            Suggested stack: custom landing page + Shopify or Stripe checkout + Printful fulfillment + Firebase Auth for supporter login.
           </div>
         </article>
 
-        <article class="about-card">
-          <h3>Recommended Setup</h3>
-          <p>Use this page as the front-end storefront and connect the commerce layer behind it.</p>
+        <article class="about-card" id="members">
+          <h3>Member Access Added</h3>
+          <p>The page now includes a front-end login modal you can use for supporter sign-in, newsletter access, or exclusive drop notifications.</p>
           <ul class="list">
-            <li>Stripe for checkout links</li>
-            <li>Printful or Printify for print-on-demand</li>
-            <li>Custom domain on your current host</li>
-            <li>Optional email capture with Mailchimp or ConvertKit</li>
+            <li>Header sign-in button</li>
+            <li>Hero member login CTA</li>
+            <li>Login and sign-up tabs</li>
+            <li>Demo success state for future auth wiring</li>
           </ul>
-          <h3 style="margin-top:22px;">What to Replace First</h3>
-          <ul class="list">
-            <li>Product names and prices</li>
-            <li>Placeholder CTA links</li>
-            <li>Mock product blocks with real images</li>
-            <li>Contact form endpoint</li>
-          </ul>
+          <div class="login-preview">
+            <div class="login-card">
+              <h3>Suggested next step</h3>
+              <p>Connect the login modal to Firebase Authentication so users can create accounts and sign in for real.</p>
+            </div>
+            <div class="login-card">
+              <h3>Demo credentials</h3>
+              <p>Use the demo account below to preview the sign-in flow in the current front-end version.</p>
+              <div class="login-credentials">
+                <span class="credential-pill">Email: demo@patriotstore.com</span>
+                <span class="credential-pill">Password: freedom123</span>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -965,29 +1162,29 @@
           <div>
             <div class="pill">Common questions</div>
             <h2>FAQ</h2>
-            <p>Use these answers to reduce support requests and increase confidence before checkout.</p>
+            <p>Use these answers to cut support questions and help buyers move more confidently toward checkout.</p>
           </div>
         </div>
 
         <div class="faq-grid">
           <article class="faq-item">
             <h3>How do customers buy from the site?</h3>
-            <p>Replace each placeholder product button with a Stripe payment link, Shopify Buy Button, Ecwid product link, or embedded checkout component.</p>
+            <p>Replace each placeholder product button with a live Stripe payment link, Shopify Buy Button, Ecwid link, or embedded checkout component.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>What does the new login do?</h3>
+            <p>Right now it is a front-end modal with demo behavior. It is ready to be connected to Firebase Auth or another real authentication system.</p>
           </article>
 
           <article class="faq-item">
             <h3>Can fulfillment be automated?</h3>
-            <p>Yes. Connect a print-on-demand provider so they receive the order details, produce the item, and ship it to the customer for you.</p>
-          </article>
-
-          <article class="faq-item">
-            <h3>Do I need to hold inventory?</h3>
-            <p>No. A print-on-demand setup lets you avoid buying inventory upfront, though margins will be lower than bulk ordering yourself.</p>
+            <p>Yes. Connect your commerce backend to Printful or another print-on-demand provider so orders route into production automatically.</p>
           </article>
 
           <article class="faq-item">
             <h3>Can I add more products later?</h3>
-            <p>Yes. Add additional product cards, duplicate sections, or swap the current grid for an embedded storefront once your catalog grows.</p>
+            <p>Yes. Duplicate the product cards, add new sections, or swap this grid for a larger embedded storefront when you expand the catalog.</p>
           </article>
         </div>
       </div>
@@ -997,8 +1194,8 @@
       <div class="container contact-grid">
         <article class="contact-card">
           <div class="pill">Get in touch</div>
-          <h2 style="margin-top:12px; font-size:clamp(1.9rem,4vw,3rem); line-height:1; letter-spacing:-0.04em; text-transform:uppercase;">Questions, wholesale, or collabs</h2>
-          <p>Use this section for support, wholesale inquiries, partnerships, or creator collaborations.</p>
+          <h2 style="margin-top:12px; font-size:clamp(1.95rem,4vw,3.15rem); line-height:1; letter-spacing:-0.05em; text-transform:uppercase;">Questions, wholesale, or collabs</h2>
+          <p>Use this section for support, wholesale inquiries, partnerships, or collaborator outreach.</p>
 
           <div class="contact-list">
             <div class="contact-item"><strong>Email</strong><br><span style="color:var(--muted)">support@getoutofmycountrynow.com</span></div>
@@ -1007,8 +1204,8 @@
           </div>
 
           <div class="newsletter">
-            <strong style="font-size:1.15rem; display:block;">Get launch alerts and new drops</strong>
-            <div class="helper">Connect this form to your email platform of choice to build a list before or after launch.</div>
+            <strong style="font-size:1.15rem; display:block;">Get new drops and supporter alerts</strong>
+            <div class="helper">Connect this signup field to your email platform to build a list before launch and after launch.</div>
             <div class="newsletter-row">
               <input type="email" placeholder="Enter your email" aria-label="Email address">
               <button class="btn btn-primary" type="button">Subscribe</button>
@@ -1018,7 +1215,7 @@
 
         <article class="contact-card">
           <h3>Contact Form</h3>
-          <p>This form is front-end only right now. Connect it to Formspree, Basin, Netlify Forms, or your own backend endpoint.</p>
+          <p>This form is still front-end only. Connect it to Formspree, Basin, Netlify Forms, or your own backend endpoint.</p>
 
           <form id="contactForm">
             <div class="field-grid">
@@ -1050,13 +1247,13 @@
         <div class="footer-col">
           <div class="brand" style="margin-bottom:10px;">
             <div class="brand-badge">GO</div>
-            <div class="brand-text">
+            <div>
               <p class="brand-title">Get Out Of My Country Now</p>
-              <div class="brand-sub">Official merch storefront</div>
+              <div class="brand-sub">Patriotic merch storefront</div>
             </div>
           </div>
-          <p>Single-page merch storefront designed for bold product drops, direct checkout, and third-party fulfillment.</p>
-          <div class="notice">Replace all placeholder product copy, support details, and legal text with your final approved content before launch.</div>
+          <p>Single-page merch storefront with a patriotic rebrand, product sections, and a new supporter login entry point.</p>
+          <div class="notice">Replace all placeholder product copy, support details, demo credentials, and legal text with your final live content before launch.</div>
         </div>
 
         <div class="footer-col">
@@ -1070,9 +1267,9 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="#about">About</a>
+          <a href="#members">Members</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
-          <a href="#">Shipping Policy</a>
         </div>
 
         <div class="footer-col">
@@ -1086,16 +1283,68 @@
 
       <div class="footer-bottom">
         <div>© <span id="year"></span> Get Out Of My Country Now. All rights reserved.</div>
-        <div>Built for direct merchandising • Replace placeholder checkout links before launch</div>
+        <div>Patriotic storefront demo • Replace placeholder checkout and auth wiring before launch</div>
       </div>
     </div>
   </footer>
+
+  <div class="modal" id="authModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-stripe"></div>
+      <div class="modal-body">
+        <div class="modal-header">
+          <div>
+            <div class="pill" style="margin-bottom:10px;">Member access</div>
+            <h2>Sign in</h2>
+          </div>
+          <button class="close-btn" id="closeModal" type="button" aria-label="Close modal">✕</button>
+        </div>
+
+        <p>Use this front-end login flow for now, then connect it to Firebase Authentication or your preferred auth provider later.</p>
+
+        <div class="toggle-row">
+          <button class="toggle-btn active" id="signInTab" type="button">Sign In</button>
+          <button class="toggle-btn" id="signUpTab" type="button">Create Account</button>
+        </div>
+
+        <form id="signInForm">
+          <input type="email" id="loginEmail" placeholder="Email address" required>
+          <input type="password" id="loginPassword" placeholder="Password" required>
+          <button class="btn btn-primary" type="submit">Sign In</button>
+          <div class="demo-note">Demo login: <strong>demo@patriotstore.com</strong> / <strong>freedom123</strong></div>
+          <div class="success-banner" id="loginSuccess">Demo sign-in successful. Replace this logic with Firebase or another real auth provider.</div>
+        </form>
+
+        <form id="signUpForm" class="hidden">
+          <div class="field-grid">
+            <input type="text" id="signupFirst" placeholder="First name" required>
+            <input type="text" id="signupLast" placeholder="Last name" required>
+          </div>
+          <input type="email" id="signupEmail" placeholder="Email address" required>
+          <input type="password" id="signupPassword" placeholder="Create password" required>
+          <button class="btn btn-blue" type="submit">Create Account</button>
+          <div class="demo-note">This is a front-end demo account form. Wire it to a database/auth provider to store real users.</div>
+          <div class="success-banner" id="signupSuccess">Demo account created. Connect this form to real authentication to make it functional.</div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script>
     const nav = document.getElementById('siteNav');
     const mobileToggle = document.getElementById('mobileToggle');
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
+    const authModal = document.getElementById('authModal');
+    const loginTrigger = document.getElementById('loginTrigger');
+    const heroLoginTrigger = document.getElementById('heroLoginTrigger');
+    const closeModal = document.getElementById('closeModal');
+    const signInTab = document.getElementById('signInTab');
+    const signUpTab = document.getElementById('signUpTab');
+    const signInForm = document.getElementById('signInForm');
+    const signUpForm = document.getElementById('signUpForm');
+    const loginSuccess = document.getElementById('loginSuccess');
+    const signupSuccess = document.getElementById('signupSuccess');
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1103,10 +1352,74 @@
       nav.classList.toggle('open');
     });
 
+    function openModal() {
+      authModal.classList.add('open');
+      authModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeAuthModal() {
+      authModal.classList.remove('open');
+      authModal.setAttribute('aria-hidden', 'true');
+    }
+
+    loginTrigger.addEventListener('click', openModal);
+    heroLoginTrigger.addEventListener('click', openModal);
+    closeModal.addEventListener('click', closeAuthModal);
+
+    authModal.addEventListener('click', (e) => {
+      if (e.target === authModal) closeAuthModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && authModal.classList.contains('open')) {
+        closeAuthModal();
+      }
+    });
+
+    signInTab.addEventListener('click', () => {
+      signInTab.classList.add('active');
+      signUpTab.classList.remove('active');
+      signInForm.classList.remove('hidden');
+      signUpForm.classList.add('hidden');
+    });
+
+    signUpTab.addEventListener('click', () => {
+      signUpTab.classList.add('active');
+      signInTab.classList.remove('active');
+      signUpForm.classList.remove('hidden');
+      signInForm.classList.add('hidden');
+    });
+
+    signInForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+
+      if (email === 'demo@patriotstore.com' && password === 'freedom123') {
+        loginSuccess.style.display = 'block';
+        setTimeout(() => {
+          closeAuthModal();
+          loginSuccess.style.display = 'none';
+          signInForm.reset();
+        }, 1200);
+      } else {
+        alert('Demo login failed. Use demo@patriotstore.com and freedom123, or replace this with real auth.');
+      }
+    });
+
+    signUpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      signupSuccess.style.display = 'block';
+      setTimeout(() => {
+        signupSuccess.style.display = 'none';
+        signUpForm.reset();
+      }, 1400);
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      formMessage.textContent = 'Demo only: connect this form to a service like Formspree, Basin, Netlify Forms, or your own backend.';
-      formMessage.style.color = '#ffe57d';
+      formMessage.textContent = 'Demo only: connect this form to Formspree, Basin, Netlify Forms, or your own backend endpoint.';
+      formMessage.style.color = '#d9ebff';
       form.reset();
     });
 
@@ -1120,4 +1433,3 @@
   </script>
 </body>
 </html>
-
