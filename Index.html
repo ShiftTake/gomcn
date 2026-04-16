@@ -1,1 +1,263 @@
-getoutofmycountrynow.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetOutOfMyCountryNow.com | Official Merch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-bg {
+            /* Using a high-quality American flag background with a dark overlay for text contrast */
+            background: linear-gradient(rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.75)), 
+                        url('https://images.unsplash.com/photo-1508609349937-5ee4cb3e0ed0?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed; /* Parallax effect for desktop */
+        }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #111827;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            transition: opacity 0.3s, visibility 0.3s;
+            opacity: 0;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Responsive adjustments for background-attachment */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 leading-tight">
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast shadow-2xl border border-gray-700 font-bold uppercase text-xs tracking-widest">Link copied to clipboard!</div>
+
+    <!-- Navigation -->
+    <header class="bg-blue-900 text-white sticky top-0 z-40 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-xl md:text-2xl font-black tracking-tighter uppercase italic">GetOutOfMyCountryNow</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 font-bold uppercase text-sm tracking-widest">
+                <a href="#shop" class="hover:text-red-500 transition">Shop</a>
+                <a href="#about" class="hover:text-red-500 transition">About</a>
+                <a href="#contact" class="hover:text-red-500 transition">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#shop" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-xs font-black uppercase transition">Buy Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Flag Background -->
+    <section class="hero-bg text-white py-32 md:py-48 flex items-center justify-center border-b-8 border-red-600">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-none drop-shadow-2xl">
+                GEAR FOR THE <span class="text-red-600">PATRIOT</span>
+            </h2>
+            <p class="text-xl md:text-3xl mb-12 text-gray-100 max-w-3xl mx-auto font-bold drop-shadow-lg">
+                High-quality apparel and accessories for those who stand unapologetically for their country.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#shop" class="bg-red-600 hover:bg-red-700 text-white px-12 py-5 rounded-md text-xl font-black uppercase transition shadow-2xl transform hover:scale-105">Shop The Collection</a>
+                <a href="#about" class="bg-white hover:bg-gray-100 text-blue-900 px-12 py-5 rounded-md text-xl font-black uppercase transition shadow-2xl transform hover:scale-105">Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <main id="shop" class="container mx-auto px-4 py-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b-4 border-blue-900 pb-8">
+            <div>
+                <h3 class="text-4xl font-black uppercase text-blue-900 italic tracking-tighter">Official Merchandise</h3>
+                <p class="text-gray-500 font-bold uppercase text-sm tracking-widest mt-2">Secure checkout via Stripe</p>
+            </div>
+            <div class="mt-4 md:mt-0 text-red-600 font-black uppercase tracking-widest text-lg flex items-center italic">
+                <i data-lucide="shield-check" class="mr-2 w-6 h-6"></i> Premium Quality
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <!-- Product 1 -->
+            <div class="product-card bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="T-Shirt" class="w-full h-96 object-cover">
+                    <span class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Best Seller</span>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-black uppercase text-gray-900 mb-2">Signature Patriot Tee</h4>
+                    <p class="text-gray-600 mb-8 text-sm flex-grow">Heavyweight premium cotton. Bold graphics that won't fade. Proudly printed in the USA.</p>
+                    <div class="flex items-baseline mb-8">
+                        <span class="text-4xl font-black text-blue-900 tracking-tighter">$34.99</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <a href="#" target="_blank" class="col-span-3 flex items-center justify-center bg-blue-900 text-white py-4 rounded-lg font-black hover:bg-blue-800 transition uppercase text-sm tracking-widest shadow-md">
+                            <i data-lucide="shopping-cart" class="w-4 h-4 mr-2"></i> Buy Now
+                        </a>
+                        <button onclick="copyProductLink('#', 'Signature Patriot Tee')" class="col-span-1 flex items-center justify-center border-2 border-gray-200 rounded-lg hover:bg-gray-100 transition text-gray-700" title="Share Link">
+                            <i data-lucide="share-2" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" alt="Hat" class="w-full h-96 object-cover">
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-black uppercase text-gray-900 mb-2">Classic Trucker Hat</h4>
+                    <p class="text-gray-600 mb-8 text-sm flex-grow">High-profile structured front with breathable mesh back. Adjustable snap closure for a perfect fit.</p>
+                    <div class="flex items-baseline mb-8">
+                        <span class="text-4xl font-black text-blue-900 tracking-tighter">$29.99</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <a href="#" target="_blank" class="col-span-3 flex items-center justify-center bg-blue-900 text-white py-4 rounded-lg font-black hover:bg-blue-800 transition uppercase text-sm tracking-widest shadow-md">
+                            <i data-lucide="shopping-cart" class="w-4 h-4 mr-2"></i> Buy Now
+                        </a>
+                        <button onclick="copyProductLink('#', 'Classic Trucker Hat')" class="col-span-1 flex items-center justify-center border-2 border-gray-200 rounded-lg hover:bg-gray-100 transition text-gray-700" title="Share Link">
+                            <i data-lucide="share-2" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Hoodie" class="w-full h-96 object-cover">
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-black uppercase text-gray-900 mb-2">Freedom Hoodie</h4>
+                    <p class="text-gray-600 mb-8 text-sm flex-grow">Double-lined hood with matching drawcord. Soft feel and reduced pilling. Built to last.</p>
+                    <div class="flex items-baseline mb-8">
+                        <span class="text-4xl font-black text-blue-900 tracking-tighter">$59.99</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <a href="#" target="_blank" class="col-span-3 flex items-center justify-center bg-blue-900 text-white py-4 rounded-lg font-black hover:bg-blue-800 transition uppercase text-sm tracking-widest shadow-md">
+                            <i data-lucide="shopping-cart" class="w-4 h-4 mr-2"></i> Buy Now
+                        </a>
+                        <button onclick="copyProductLink('#', 'Freedom Hoodie')" class="col-span-1 flex items-center justify-center border-2 border-gray-200 rounded-lg hover:bg-gray-100 transition text-gray-700" title="Share Link">
+                            <i data-lucide="share-2" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Trust Section -->
+    <section class="bg-blue-900 text-white py-24 border-y-8 border-red-600">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div class="p-6">
+                <i data-lucide="truck" class="w-16 h-16 mx-auto mb-6 text-red-600 drop-shadow-lg"></i>
+                <h5 class="text-2xl font-black uppercase mb-4 italic tracking-tighter">Fast Shipping</h5>
+                <p class="text-blue-100 text-sm font-bold uppercase tracking-widest">Orders ship from the USA within 48 hours.</p>
+            </div>
+            <div class="p-6">
+                <i data-lucide="lock" class="w-16 h-16 mx-auto mb-6 text-red-600 drop-shadow-lg"></i>
+                <h5 class="text-2xl font-black uppercase mb-4 italic tracking-tighter">Secure Checkout</h5>
+                <p class="text-blue-100 text-sm font-bold uppercase tracking-widest">Bank-level security provided by Stripe.</p>
+            </div>
+            <div class="p-6">
+                <i data-lucide="flag" class="w-16 h-16 mx-auto mb-6 text-red-600 drop-shadow-lg"></i>
+                <h5 class="text-2xl font-black uppercase mb-4 italic tracking-tighter">Family Owned</h5>
+                <p class="text-blue-100 text-sm font-bold uppercase tracking-widest">Proudly independent and American operated.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="text-3xl font-black italic uppercase mb-4 tracking-tighter">GetOutOfMyCountryNow</h4>
+            <p class="text-gray-400 max-w-lg mx-auto mb-12 font-medium">Supporting patriots across the nation. Join the movement and wear your message with pride.</p>
+            
+            <div class="flex justify-center space-x-8 mb-16">
+                <a href="#" class="text-gray-400 hover:text-red-600 transition"><i data-lucide="facebook" class="w-8 h-8"></i></a>
+                <a href="#" class="text-gray-400 hover:text-red-600 transition"><i data-lucide="twitter" class="w-8 h-8"></i></a>
+                <a href="#" class="text-gray-400 hover:text-red-600 transition"><i data-lucide="instagram" class="w-8 h-8"></i></a>
+            </div>
+
+            <div class="border-t border-gray-800 pt-10 text-gray-500 text-xs font-black uppercase tracking-[0.2em]">
+                &copy; 2026 GetOutOfMyCountryNow. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+
+        function copyProductLink(stripeUrl, productName) {
+            // Priority 1: Use the Stripe Payment Link if provided
+            // Priority 2: Use the current page URL with a hash for that product
+            const shareUrl = stripeUrl !== '#' ? stripeUrl : window.location.origin + window.location.pathname + "#" + productName.replace(/\s+/g, '-').toLowerCase();
+            
+            // Modern copy to clipboard with fallback
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(shareUrl).then(() => {
+                    showToast(`LINK FOR ${productName.toUpperCase()} COPIED!`);
+                });
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = shareUrl;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast(`LINK FOR ${productName.toUpperCase()} COPIED!`);
+                } catch (err) {
+                    console.error('Fallback copy failed', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+    </script>
+</body>
+</html>
